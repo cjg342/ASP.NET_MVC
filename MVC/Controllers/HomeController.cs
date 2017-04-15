@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVC.Models;
 
 namespace MVC.Controllers
 {
@@ -30,10 +31,19 @@ namespace MVC.Controllers
             };
 
             // Finally return a view
-            return View();
+
+            // Connect to the database
+            DropDownExampleEntities db= new DropDownExampleEntities();
+            // Retrieve departments, and build SelectList
+            ViewBag.products = new SelectList(db.products, "Id", "Name",1);
+
+            // text box for and drop down for stringly typed
+            Company company = new Company("Pragim");
+            ViewBag.Departments = new SelectList(company.products, "Id", "Name");
+            ViewBag.CompanyName = company.CompanyName;
+
+            return View(company);
         }
-
-
 
 
 

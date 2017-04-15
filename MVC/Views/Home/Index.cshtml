@@ -1,27 +1,66 @@
-﻿
+﻿@model Company
+
 @{
     Layout = null;
-    ViewBag.Title = "Countries List";
+    ViewBag.Title = "Index1";
 }
 
 <h2>Countries List</h2>
 
 <ul>
-
     @foreach (string strCountry in ViewBag.Countries)
     {
         <li>@strCountry</li>
     }
-
 </ul>
 
 <br />
 
 <ul>
-
     @foreach (string strCountry1 in (List<string>)ViewData["Countries"])
     {
         <li>@strCountry1</li>
     }
-
 </ul>
+
+<h3>HTML Helpers</h3>
+
+<h3>Textbox</h3>
+@Html.TextBox("firstname", "John", new { style = "background-color:Red; color:White; font-weight:bold", title = "Please enter your first name" })
+<br />
+<h5>Read only</h5>
+@Html.TextBox("firstname", "John", new { @class = "redtextbox", @readonly = "true" })
+<br />
+<h5>To generate a label for "First Name"</h5>
+@Html.Label("fisrtname", "First Name")
+<br />
+<h5>To generate a textbox to enter password, so that the input is masked</h5>
+@Html.Password("Password")
+<br />
+<h5>To generate a multi-line textbox. 5 lines 20 columns</h5>
+@Html.TextArea("Comments", "", 5, 20, null)
+<br />
+<h5>To generate a hidden textbox</h5>
+@Html.Hidden("id")
+
+
+<h3>Drop Down Lists</h3>
+<h5>Hard coded list</h5>
+@Html.DropDownList("Departments", new List<SelectListItem>
+{
+    new SelectListItem { Text = "IT", Value = "1", Selected=true},
+    new SelectListItem { Text = "HR", Value = "2"},
+    new SelectListItem { Text = "Payroll", Value = "3"}
+}, "Select Department") 
+
+<h5>From server</h5>
+@*Name from view bag*@
+@Html.DropDownList("products", "Select Products") 
+
+
+<h3>Text Box vs Text Box For</h3>
+Html.TextBox amd Html.DropDownList are not strongly typed
+<br />
+@Html.TextBoxFor(m => m.CompanyName)
+<br />
+@Html.DropDownListFor(m => m.products, new SelectList(Model.products, "Id", "Name"), "Select Productz")
