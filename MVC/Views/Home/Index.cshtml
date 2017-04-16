@@ -66,13 +66,33 @@ Html.TextBox amd Html.DropDownList are not strongly typed
 @Html.DropDownListFor(m => m.Departments, new SelectList(Model.Departments, "Id", "Name"), "Select Department")
 
 
-<h3>Radio button html helper</h3>
-<h3>Also example of Html ActionLink</h3>
-<h4>Html.ActionLink("Radio Html Helper", "Index2", "Home")</h4>
+<h3>Radio button html helper (Also example of Html ActionLink)</h3>
 @Html.ActionLink("Radio Html Helper","Index2", "Home")
+
+<h3>Also example of listing Raw HTML</h3>
+@Html.Raw("Next space <br> Some html text <br>")
 
 <h3>Check box html helper</h3>
 @Html.ActionLink("Check Box Html Helper", "Index3", "Home")
 
 <h3>List Box box html helper</h3>
 @Html.ActionLink("List Box Html Helper", "Index4", "Home")
+
+<h3>Advantages of Stringly typed views</h3>
+<h3>With ViewBag and Dynamic type no checking</h3>
+@Html.ActionLink("Advantages of Stringly typed views", "Index5", "Home",new { id = "1" }, null)
+
+<h3>Partial view</h3>
+@Html.ActionLink("Partial view", "Index6", "Home")
+
+<h3>Render Partial and Partial view differences</h3>
+<h5>The return type of "RenderPartial" is void, where as "Partial" returns "MvcHtmlString"</h5>
+<h5>Syntax for invoking Partial() and RenderPartial() methods in Razor views</h5>
+@Html.ActionLink("Render Partial view", "Index7", "Home")
+
+<h3>Razor view syntax</h3>
+@Html.ActionLink("Razor view syntax", "Index8", "Home")
+
+<h3>Layout view in mvc</h3>
+<h5>Maintain consistentlook and feel</h5>
+@Html.ActionLink("Layout view in mvc", "Index9", "Home")

@@ -124,6 +124,16 @@
       <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
       <LastGenOutput>SampleDataModelCheckbox.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\SampleDataModelEmployee.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleDataModelEmployee.edmx</DependentUpon>
+      <LastGenOutput>SampleDataModelEmployee.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SampleDataModelEmployee.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleDataModelEmployee.edmx</DependentUpon>
+      <LastGenOutput>SampleDataModelEmployee.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\SampleDataModel.edmx">
@@ -140,6 +150,13 @@
     <Content Include="Models\SampleDataModelCheckbox.edmx.diagram">
       <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\SampleDataModelEmployee.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleDataModelEmployee.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SampleDataModelEmployee.edmx.diagram">
+      <DependentUpon>SampleDataModelEmployee.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -149,6 +166,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Photos\Penguins.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -170,6 +190,9 @@
     <Compile Include="Models\Company2.cs" />
     <Compile Include="Models\Department.cs">
       <DependentUpon>SampleDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>SampleDataModelEmployee.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SampleDataModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -201,13 +224,27 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\SampleDataModelEmployee.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDataModelEmployee.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SampleDataModelEmployee.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDataModelEmployee.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SampleDataModelEmployee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDataModelEmployee.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
@@ -218,6 +255,14 @@
     <Content Include="Views\Home\Index3.cshtml" />
     <Content Include="Views\Home\EditorTemplates\City.cshtml" />
     <Content Include="Views\Home\Index4.cshtml" />
+    <Content Include="Views\Home\Index5.cshtml" />
+    <Content Include="Views\Home\Index6.cshtml" />
+    <Content Include="Views\Shared\_Employee.cshtml" />
+    <Content Include="Views\Home\Index7.cshtml" />
+    <Content Include="Views\Home\Index8.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout1.cshtml" />
+    <Content Include="Views\Home\Index9.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

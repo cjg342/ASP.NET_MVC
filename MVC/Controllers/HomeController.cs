@@ -139,17 +139,44 @@ namespace MVC.Controllers
                 return sb.ToString();
             }
         }
+        
+        [HttpGet]
+        public ActionResult Index5(int id)
+        {
+            sampleEntityEmployee db = new sampleEntityEmployee();
+            Employee employee = db.Employees.Single(x => x.Id == id);
+            ViewBag.EmployeeData = employee;
+            return View(employee);
+
+        }
+
+        [HttpGet]
+        public ActionResult Index6()
+        {
+            sampleEntityEmployee db = new sampleEntityEmployee();
+            return View(db.Employees.ToList());
+        }
+
+        [HttpGet]
+        public ActionResult Index7()
+        {
+            sampleEntityEmployee db = new sampleEntityEmployee();
+            return View(db.Employees.ToList());
+        }
 
 
+        [HttpGet]
+        public ActionResult Index8()
+        {
+            return View();
+        }
 
 
-
-
-
-
-
-
-
+        [HttpGet]
+        public ActionResult Index9()
+        {
+            return View();
+        }
 
 
 

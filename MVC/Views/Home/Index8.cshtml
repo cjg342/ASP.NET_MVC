@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<h3>Use @@ to switch between c# code and html.</h3>
+@for (int i = 1; i <= 10; i++)
+{
+    <b>@i</b>
+}
+
+
+
+<h3>Use @@{} to define a code block. If we want to define some variables and perform calculations, then use code block. The following code block defines 2 variables and computes the sum of first 10 even and odd numbers.</h3>
+@{
+    int SumOfEvenNumbers = 0;
+    int SumOfOddNumbers = 0;
+
+    for (int i = 1; i <= 10; i++)
+    {
+        if (i % 2 == 0)
+        {
+            SumOfEvenNumbers = SumOfEvenNumbers + i;
+        }
+        else
+        {
+            SumOfOddNumbers = SumOfOddNumbers + i;
+        }
+    }
+}
+
+<h3>Sum of Even Numbers = @SumOfEvenNumbers</h3>
+<h3>Sum of Odd Numbers = @SumOfOddNumbers</h3>
+
+<h3>Use look at cshtml page</h3>
+@for (int i = 1; i <= 10; i++)
+{
+    <b>@i</b>
+    if (i % 2 == 0)
+    {
+        @: - Even
+    }
+    else
+    {
+        @: - Odd
+    }
+    <br />
+}
+
+
+<h3>Using explicit code nugget</h3>
+@for (int i = 1; i <= 5; i++)
+{
+    <h5>"~/Images/@(i).png"</h5>
+}
+
+
+<h3>Use two @@ symbol to escape @@</h3>
+@for (int i = 1; i <= 5; i++)
+{
+    <h5>"~/Images/@(i).png"</h5>
+}
+
+<h3>Transition between c# expressions and literal text</h3>
+@{
+    int day = 31;
+    int month = 12;
+    int year = 2013;
+}
+
+Date is @day-@month-@year
