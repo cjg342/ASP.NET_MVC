@@ -1,0 +1,19 @@
+﻿@model MVC.Models.Company2
+
+@{
+    ViewBag.Title = "Index2";
+    Layout = null;
+}
+
+<h2>Index2</h2>
+
+@using (Html.BeginForm())
+{
+    foreach (var department in Model.Departments)
+    {
+        @Html.RadioButtonFor(m => m.SelectedDepartment, department.Id) @department.Name
+    }
+    <br />
+    <br />
+    <input type="submit" value="Submit" />
+}

@@ -12,10 +12,9 @@ namespace MVC.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class product
+    public partial class Department
     {
-        public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> price { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }

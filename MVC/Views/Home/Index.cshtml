@@ -1,4 +1,4 @@
-﻿@model Company
+﻿@model MVC.Models.Company
 
 @{
     Layout = null;
@@ -55,7 +55,7 @@
 
 <h5>From server</h5>
 @*Name from view bag*@
-@Html.DropDownList("products", "Select Products") 
+@Html.DropDownList("departmentsOneoff", "Select Department") 
 
 
 <h3>Text Box vs Text Box For</h3>
@@ -63,4 +63,16 @@ Html.TextBox amd Html.DropDownList are not strongly typed
 <br />
 @Html.TextBoxFor(m => m.CompanyName)
 <br />
-@Html.DropDownListFor(m => m.products, new SelectList(Model.products, "Id", "Name"), "Select Productz")
+@Html.DropDownListFor(m => m.Departments, new SelectList(Model.Departments, "Id", "Name"), "Select Department")
+
+
+<h3>Radio button html helper</h3>
+<h3>Also example of Html ActionLink</h3>
+<h4>Html.ActionLink("Radio Html Helper", "Index2", "Home")</h4>
+@Html.ActionLink("Radio Html Helper","Index2", "Home")
+
+<h3>Check box html helper</h3>
+@Html.ActionLink("Check Box Html Helper", "Index3", "Home")
+
+<h3>List Box box html helper</h3>
+@Html.ActionLink("List Box Html Helper", "Index4", "Home")

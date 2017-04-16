@@ -104,28 +104,50 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Models\DropDownModelExample.Context.tt">
+    <Content Include="Models\SampleDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DropDownModelExample.edmx</DependentUpon>
-      <LastGenOutput>DropDownModelExample.Context.cs</LastGenOutput>
+      <DependentUpon>SampleDataModel.edmx</DependentUpon>
+      <LastGenOutput>SampleDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\DropDownModelExample.tt">
+    <Content Include="Models\SampleDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DropDownModelExample.edmx</DependentUpon>
-      <LastGenOutput>DropDownModelExample.cs</LastGenOutput>
+      <DependentUpon>SampleDataModel.edmx</DependentUpon>
+      <LastGenOutput>SampleDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SampleDataModelCheckbox.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
+      <LastGenOutput>SampleDataModelCheckbox.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SampleDataModelCheckbox.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
+      <LastGenOutput>SampleDataModelCheckbox.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\DropDownModelExample.edmx">
+    <EntityDeploy Include="Models\SampleDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DropDownModelExample.Designer.cs</LastGenOutput>
+      <LastGenOutput>SampleDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\DropDownModelExample.edmx.diagram">
-      <DependentUpon>DropDownModelExample.edmx</DependentUpon>
+    <Content Include="Models\SampleDataModel.edmx.diagram">
+      <DependentUpon>SampleDataModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SampleDataModelCheckbox.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SampleDataModelCheckbox.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SampleDataModelCheckbox.edmx.diagram">
+      <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -140,24 +162,44 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CitiesViewModel.cs" />
+    <Compile Include="Models\City.cs">
+      <DependentUpon>SampleDataModelCheckbox.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\DropDownModelExample.Context.cs">
+    <Compile Include="Models\Company2.cs" />
+    <Compile Include="Models\Department.cs">
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SampleDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DropDownModelExample.Context.tt</DependentUpon>
+      <DependentUpon>SampleDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DropDownModelExample.cs">
+    <Compile Include="Models\SampleDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DropDownModelExample.tt</DependentUpon>
+      <DependentUpon>SampleDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\DropDownModelExample.Designer.cs">
+    <Compile Include="Models\SampleDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DropDownModelExample.edmx</DependentUpon>
+      <DependentUpon>SampleDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\product.cs">
-      <DependentUpon>DropDownModelExample.tt</DependentUpon>
+    <Compile Include="Models\SampleDataModelCheckbox.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDataModelCheckbox.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SampleDataModelCheckbox.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDataModelCheckbox.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SampleDataModelCheckbox.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SampleDataModelCheckbox.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -172,6 +214,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Employee\Create.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Home\Index3.cshtml" />
+    <Content Include="Views\Home\EditorTemplates\City.cshtml" />
+    <Content Include="Views\Home\Index4.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

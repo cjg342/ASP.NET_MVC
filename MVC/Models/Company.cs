@@ -1,36 +1,38 @@
-﻿using MVC.Models;
+﻿using System;
 using System.Collections.Generic;
-using System;
 using System.Linq;
+using System.Web;
 
-public class Company
+namespace MVC.Models
 {
-    private string _name;
-    public Company(string name)
+    public class Company
     {
-        this._name = name;
+        private string _name;
+        public Company(string name)
+        {
+            this._name = name;
+        }
+
+        public List<Department> Departments
+        {
+            get
+            {
+                sampleDBContext db = new sampleDBContext();
+                return db.Departments.ToList();
+            }
+        }
+        
+        public string CompanyName
+        {
+            get
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
+        }
     }
 
-    public List<product> products
-    {
-        get
-        {
-            DropDownExampleEntities db = new DropDownExampleEntities();
-            return db.products.ToList();
-        }
-    }
-
-    public string CompanyName
-    {
-        get
-        {
-            return _name;
-        }
-        set
-        {
-            _name = value;
-        }
-    }
 }
-
-

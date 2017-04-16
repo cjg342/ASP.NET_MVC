@@ -13,10 +13,10 @@ namespace MVC.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DropDownExampleEntities : DbContext
+    public partial class sampleDBContext : DbContext
     {
-        public DropDownExampleEntities()
-            : base("name=DropDownExampleEntities")
+        public sampleDBContext()
+            : base("name=sampleDBContext")
         {
         }
     
@@ -25,6 +25,6 @@ namespace MVC.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<Department> Departments { get; set; }
     }
 }
