@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using MVC.Models;
 using System.Text;
+using MVCDemo.Common;
+using Newtonsoft.Json;
 
 namespace MVC.Controllers
 {
@@ -179,13 +181,39 @@ namespace MVC.Controllers
         }
 
 
+        //Part 67 Action selectors in mvc
+        [ActionName("List")]
+        [HttpGet]
+        public ActionResult Index10()
+        {
+            return View("Index10");
+        }
 
+        [HttpGet]
+        [HandleError]
+        [RequireHttps]
+        [ValidateInput(false)]
+        public ActionResult Index11()
+        {
+            throw new Exception("Something went wrong");
+        }
 
+        [TrackExecutionTime]
+        public string Index12()
+        {
+            return "Index Action Invoked";
+        }
 
+        [TrackExecutionTime]
+        public string Index13()
+        {
+            throw new Exception("Exception occured");
+        }
 
-
-
-
+        public JsonResult Index14()
+        {
+            return Json("JSON Action type", JsonRequestBehavior.AllowGet);
+        }
 
 
 

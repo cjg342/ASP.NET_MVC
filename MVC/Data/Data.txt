@@ -1,0 +1,13 @@
+﻿
+Home -> Index12 -> OnActionExecuting 	- 4/16/2017 9:38:23 PM
+
+Home -> Index12 -> OnActionExecuted 	- 4/16/2017 9:38:23 PM
+Home -> Index12 -> OnResultExecuting 	- 4/16/2017 9:38:23 PM
+Home -> Index12 -> OnResultExecuted 	- 4/16/2017 9:38:23 PM
+---------------------------------------------------------
+
+Home -> Index13 -> OnActionExecuting 	- 4/16/2017 9:38:33 PM
+
+Home -> Index13 -> OnActionExecuted 	- 4/16/2017 9:38:39 PM
+Home -> Index13 -> Exception occured 	- 4/16/2017 9:38:39 PM
+---------------------------------------------------------
