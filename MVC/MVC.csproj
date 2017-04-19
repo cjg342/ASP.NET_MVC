@@ -183,10 +183,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Common\TrackExecutionTime.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models2\employee.cs" />
     <Compile Include="Models\CitiesViewModel.cs" />
     <Compile Include="Models\City.cs">
       <DependentUpon>SampleDataModelCheckbox.tt</DependentUpon>
@@ -272,6 +274,12 @@
     <Content Include="Views\Home\Index11.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Home\Index12.cshtml" />
+    <Content Include="Views\Home\Index15.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
