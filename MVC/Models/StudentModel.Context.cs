@@ -13,10 +13,10 @@ namespace MVC.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class sampleEntityEmployee : DbContext
+    public partial class sampleDBContextStudents : DbContext
     {
-        public sampleEntityEmployee()
-            : base("name=sampleEntityEmployee")
+        public sampleDBContextStudents()
+            : base("name=sampleDBContextStudents")
         {
         }
     
@@ -25,8 +25,6 @@ namespace MVC.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Employee> Employees { get; set; }
-
-        public System.Data.Entity.DbSet<MVC.Models.Student> Students { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
     }
 }

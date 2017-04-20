@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div style="font-family:Arial">
+
+    <script src="~/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
+
+    <h2>Students</h2>
+    
+    <script>
+        function ClearResults() {
+            $("#divStudents").empty();
+        }
+
+
+        function CountRows() {
+            alert(($("#tableStudents tr").length - 1) + ' rows retrieved');
+        }
+
+    </script>
+
+    @Ajax.ActionLink("All", "All",
+    new AjaxOptions
+    {
+        HttpMethod = "GET", // HttpMethod to use, GET or POST
+        UpdateTargetId = "divStudents", // ID of the HTML element to update
+        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+        LoadingElementId = "divloading",
+        OnBegin = "ClearResults",   //Called before server callback
+        LoadingElementDuration = 1000
+    })
+
+    <span style="color:Blue">|</span>
+
+    @Ajax.ActionLink("The Top 3", "Top3",
+    new AjaxOptions
+    {
+        HttpMethod = "GET", // HttpMethod to use, GET or POST
+        UpdateTargetId = "divStudents", // ID of the HTML element to update
+        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+        OnBegin = "ClearResults",   //Called before server callback
+        OnSuccess = "CountRows" //Immediately after the page is updated
+    })
+
+    <span style="color:Blue">|</span>
+
+    @Ajax.ActionLink("The Bottom 3", "Bottom3",
+    new AjaxOptions
+    {
+        HttpMethod = "GET", // HttpMethod to use, GET or POST
+        UpdateTargetId = "divStudents", // ID of the HTML element to update
+        InsertionMode = InsertionMode.Replace, // Replace the existing contents
+        OnBegin = "ClearResults",    //Called before server callback
+        OnSuccess = "CountRows" //Immediately after the page is updated
+    })
+    
+    <br /><br />
+    <div id="divloading" style="display:none;">
+        <img src="~/Photos/spinner.gif" />
+    </div>
+
+    <div id="divStudents">
+    </div>
+</div>
